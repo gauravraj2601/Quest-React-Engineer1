@@ -30,9 +30,10 @@ This React web page consists of several sections representing different stages o
 Each section contains cards representing individual tasks or projects. The user can move cards between sections by dragging and dropping them.
 
 ### Features
-To Do Section: Displays tasks that are yet to be started.
-In Progress Section: Displays tasks that are currently being worked on.
-Done Section: Displays tasks that have been completed.
+- To Do Section: Displays tasks that are yet to be started.
+- In Progress Section: Displays tasks that are currently being worked on.
+- Review Section: Displays tasks that are in the review phase, awaiting feedback or approval.
+- Done Section: Displays tasks that have been completed.  
 Add Card: Each section has an option to add a new card, which opens a modal to input details for the new task.
 
 ### Dependencies
