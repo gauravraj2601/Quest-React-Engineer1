@@ -42,6 +42,8 @@ This project utilizes the following npm modules:
 
 - react-icons: Used for displaying icons in the project.
 - styled-components: Used for styling React components with CSS-in-JS.
+- react-beautiful-dnd: Used for drag and drop functionality.
+
 
   
 ### Submission Details
