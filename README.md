@@ -38,19 +38,21 @@ Add Card: Each section has an option to add a new card, which opens a modal to i
 ### Dependencies
 This project utilizes the following npm modules:
 
-react-icons: Used for displaying icons in the project.
-styled-components: Used for styling React components with CSS-in-JS.
-Time Spent
-Approximately 2-3 hours were spent on completing the development of this project.
+- react-icons: Used for displaying icons in the project.
+- styled-components: Used for styling React components with CSS-in-JS.
 
-Submission Details
-GitHub Repository Link: Link to Repository
-Deployed URL: Link to Deployed App
-Additional Notes
-This project aimed to replicate the design provided as closely as possible, incorporating animations where appropriate. The code is modular and well-organized, following best practices for React development. Proper Git commits were maintained throughout the development process.
+  
+### Submission Details
+- GitHub Repository Link: Link to Repository
+- Deployed URL: Link to Deployed App
+
+### Additional Notes
+This project aimed to replicate the design provided as closely as possible. The code is modular and well-organized, following best practices for React development. Proper Git commits were maintained throughout the development process.
 
 Design Image
-[Insert Design Image Here]
+![image](https://github.com/gauravraj2601/Quest-React-Engineer1/assets/123883332/e054a653-e53d-4061-bc4a-e90ecedd3caf)
+
+
 
 If you have any questions or feedback, feel free to reach out. Thank you for reviewing this submission!
 
