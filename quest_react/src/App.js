@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Done from './components/Done';
+import InProgress from './components/InProgress/InProgress';
+import Review from './components/Review';
+import Todo from './components/Todo/Todo';
 
 function App() {
   return (
     <div className="App">
-        Quest React Assignment
+        <Todo/>
+        <InProgress />
+        <Review />
+        <Done />
     </div>
   );
 }
