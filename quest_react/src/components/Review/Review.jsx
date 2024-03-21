@@ -10,26 +10,31 @@ import Cart from '../Cart';
     const [modalIsOpen, setIsOpen] = useState(false);
     const [reviewList, setReviewList] = useState([
       {
+        id:"1",
         projectName:"Project W",
         barColor:"#5ba4cf",
         messageCount:"14"
       },
       {
+        id:"2",
         projectName:"Project T",
         barColor:"#c0c6d0",
         messageCount:"10"
       },
       {
+        id:"3",
         projectName:"Project U",
         barColor:"#7bc86c",
         messageCount:"6"
       },
       {
+        id:"4",
         projectName:"Project Q",
         barColor:"#cd8de5",
         messageCount:""
       },
       {
+        id:"5",
         projectName:"Project V",
         barColor:"#e6c60d",
         messageCount:"2"
@@ -50,7 +55,7 @@ import Cart from '../Cart';
         <div>
           {reviewList?.map((el,i)=>(
   
-          <Cart index={`${i+1}review`} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
+          <Cart key={el.id} index={i} id={el.id} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
           ))}
         </div>
         <div id='add-cart-div'>

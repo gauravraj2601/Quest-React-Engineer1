@@ -8,21 +8,25 @@ const Done = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [doneList, setDoneList] = useState([
     {
+      id:"1",
       projectName:"Project D",
       barColor:"#29cce5",
       messageCount:"9"
     },
     {
+      id:"2",
       projectName:"Project N",
       barColor:"#cd8de5",
       messageCount:"4"
     },
     {
+      id:"3",
       projectName:"Project X",
       barColor:"#e6c60d",
       messageCount:"24"
     },
     {
+      id:"4",
       projectName:"Project R",
       barColor:"#c0c6d0",
       messageCount:"2"
@@ -43,7 +47,7 @@ const Done = () => {
       <div>
         {doneList?.map((el,i)=>(
 
-        <Cart index={`${i+1}done`} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
+        <Cart key={el.id} index={i} id={el.id} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
         ))}
       </div>
       <div id='add-cart-div'>

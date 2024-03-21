@@ -6,30 +6,9 @@ import { BsPlus } from "react-icons/bs";
 import styled from "styled-components"
 import AddCardModal from '../AddCardModal';
 import Cart from '../Cart';
-const InProgress = () => {
+const InProgress = ({inprogress, Setinprogress}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [inprogress, Setinprogress] = useState([
-    {
-      projectName:"Project G",
-      barColor:"#ff8ed4",
-      messageCount:"2"
-    },
-    {
-      projectName:"Project P",
-      barColor:"#f18677",
-      messageCount:""
-    },
-    {
-      projectName:"Project F",
-      barColor:"#6deca9",
-      messageCount:""
-    },
-    {
-      projectName:"Project Z",
-      barColor:"#c0c6d0",
-      messageCount:""
-    },
-  ])
+  
   const addProject=(projectName, messageCount)=>{
     const randomIndex = Math.floor(Math.random() * inprogress.length);
     const randomColor = inprogress[randomIndex].barColor;
@@ -45,7 +24,7 @@ const InProgress = () => {
       <div>
         {inprogress?.map((el,i)=>(
 
-        <Cart index={`${i+1}progress`} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
+        <Cart key={el.id} index={i} id={el.id} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
         ))}
       </div>
       <div id='add-cart-div'>
@@ -54,6 +33,7 @@ const InProgress = () => {
       </div>
       <AddCardModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} addProject={addProject} />
     </DIV>
+    
   )
 }
 

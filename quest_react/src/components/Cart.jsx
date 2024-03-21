@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { TfiAlignLeft } from "react-icons/tfi";
 import { FaRegMessage } from "react-icons/fa6";
 
-const Cart = ({ index, projectName, barColor, messageCount }) => {
+const Cart = ({ id, index, projectName, barColor, messageCount }) => {
     // console.log("index", index)
   return (
-    <CART key={index} barColor={barColor}>
+    
+    <CART barColor={barColor}>
       <div id="bar"></div>
       <p>{projectName}</p>
       <div id="icons">
@@ -37,6 +38,10 @@ const CART = styled.div`
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 10px;
   padding: 10px;
+  &:hover{
+    box-shadow: 0 0 5px black;
+    transform: scale(1.03);
+  }
   #bar {
     width: 15%;
     height: 8px;
