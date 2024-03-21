@@ -43,7 +43,7 @@ This project utilizes the following npm modules:
 
   
 ### Submission Details
-- GitHub Repository Link: Link to Repository
+- GitHub Repository Link: https://github.com/gauravraj2601/Quest-React-Engineer1/tree/master/quest_react
 - Deployed URL: Link to Deployed App
 
 ### Additional Notes
