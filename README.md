@@ -23,10 +23,10 @@ npm start
 
 ## Description
 This React web page consists of several sections representing different stages of tasks: 
-- To Do,
-- In Progress,
--  Review,
--  "Done"     
+- To Do
+- In Progress
+- Review
+- Done     
 Each section contains cards representing individual tasks or projects. The user can move cards between sections by dragging and dropping them.
 
 ### Features
