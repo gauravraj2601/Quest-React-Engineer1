@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { PiDotsThreeBold } from 'react-icons/pi';
-import { BsPlus } from 'react-icons/bs';
-import styled from 'styled-components';
-import AddCardModal from '../AddCardModal';
-import Cart from '../Cart';
-import { Droppable } from 'react-beautiful-dnd';
+import React, { useState } from "react";
+import { PiDotsThreeBold } from "react-icons/pi";
+import { BsPlus } from "react-icons/bs";
+import styled from "styled-components";
+import AddCardModal from "../AddCardModal";
+import Cart from "../Cart";
+import { Droppable } from "react-beautiful-dnd";
 
 const Todo = ({ todoList, setTodoList }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -12,42 +12,44 @@ const Todo = ({ todoList, setTodoList }) => {
   const addProject = (projectName, messageCount) => {
     const randomIndex = Math.floor(Math.random() * todoList.length);
     const randomColor = todoList[randomIndex].barColor;
+    const id = Math.floor(Math.random() * 1000) + 1;
 
-    setTodoList([...todoList, { projectName, barColor: randomColor, messageCount }]);
+    setTodoList([
+      ...todoList,
+      { id, projectName, barColor: randomColor, messageCount },
+    ]);
   };
 
   return (
-    <DIV>
-      <div id="todo-text">
-        <h5>To Do</h5>
-        <PiDotsThreeBold size={20} />
-      </div>
-      <Droppable droppableId="todos">
-        {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
+    <Droppable droppableId="todo-list">
+      {(provided) => (
+        <DIV ref={provided.innerRef} {...provided.droppableProps}>
+          <div id="todo-text">
+            <h5>To Do</h5>
+            <PiDotsThreeBold size={20} />
+          </div>
+          <div>
             {todoList.map((el, i) => (
               <Cart
                 key={el.id}
-                id={el.id}
-                projectName={el.projectName}
-                barColor={el.barColor}
-                messageCount={el.messageCount}
-                draggable={true}
-                onDragStart={() => {}}
-                onDragOver={() => {}}
-                onDrop={() => {}}
+                index={i}
+                data={el}
               />
             ))}
-            {provided.placeholder}
           </div>
-        )}
-      </Droppable>
-      <div id="add-cart-div">
-        <BsPlus onClick={() => setIsOpen(true)} size={18} />
-        <p onClick={() => setIsOpen(true)}>Add a card</p>
-      </div>
-      <AddCardModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} addProject={addProject} />
-    </DIV>
+          <div id="add-cart-div">
+            <BsPlus onClick={() => setIsOpen(true)} size={18} />
+            <p onClick={() => setIsOpen(true)}>Add a card</p>
+          </div>
+          <AddCardModal
+            modalIsOpen={modalIsOpen}
+            setIsOpen={setIsOpen}
+            addProject={addProject}
+          />
+          {provided.placeholder}
+        </DIV>
+      )}
+    </Droppable>
   );
 };
 

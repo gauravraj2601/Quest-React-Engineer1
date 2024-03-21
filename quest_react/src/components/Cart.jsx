@@ -1,29 +1,38 @@
 import React from "react";
 import styled from "styled-components";
+import { Draggable } from "react-beautiful-dnd";
 import { TfiAlignLeft } from "react-icons/tfi";
 import { FaRegMessage } from "react-icons/fa6";
 
-const Cart = ({ id, index, projectName, barColor, messageCount }) => {
-    // console.log("index", index)
+const Cart = ({ index, data }) => {
   return (
-    
-    <CART barColor={barColor}>
-      <div id="bar"></div>
-      <p>{projectName}</p>
-      <div id="icons">
-        <TfiAlignLeft id="tfi" />
-        {messageCount && (
-        <div id="message-div">
-          <FaRegMessage style={{ height: "12px", width: "15px" }} />
-            <span>{messageCount}</span>
-        </div>
-        )}
-      </div>
-    </CART>
+    <Draggable draggableId={data?.id} index={index}>
+      {(provided) => (
+        <CART
+          barColor={data.barColor}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef} // Assign ref to the outermost element
+        >
+          <div id="bar"></div>
+          <p>{data.projectName}</p>
+          <div id="icons">
+            <TfiAlignLeft id="tfi" />
+            {data.messageCount && (
+              <div id="message-div">
+                <FaRegMessage style={{ height: "12px", width: "15px" }} />
+                <span>{data.messageCount}</span>
+              </div>
+            )}
+          </div>
+        </CART>
+      )}
+    </Draggable>
   );
 };
 
 export default Cart;
+
 
 const CART = styled.div`
   width: 87%;
