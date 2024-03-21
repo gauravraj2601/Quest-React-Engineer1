@@ -12,7 +12,7 @@ const Review = ({ reviewList, setReviewList }) => {
   const addProject = (projectName, messageCount) => {
     const randomIndex = Math.floor(Math.random() * reviewList.length);
     const randomColor = reviewList[randomIndex].barColor;
-    const id = Math.floor(Math.random() * 1000) + 1;
+    const id = (Math.floor(Math.random() * 1000) + 1).toString();
 
     setReviewList([
       ...reviewList,

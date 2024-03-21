@@ -12,7 +12,7 @@ const InProgress = ({ inprogress, Setinprogress }) => {
   const addProject = (projectName, messageCount) => {
     const randomIndex = Math.floor(Math.random() * inprogress.length);
     const randomColor = inprogress[randomIndex].barColor;
-    const id = Math.floor(Math.random() * 1000) + 1;
+    const id = (Math.floor(Math.random() * 1000) + 1).toString();
 
     Setinprogress([
       ...inprogress,

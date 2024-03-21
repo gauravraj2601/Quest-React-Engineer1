@@ -12,14 +12,14 @@ const Todo = ({ todoList, setTodoList }) => {
   const addProject = (projectName, messageCount) => {
     const randomIndex = Math.floor(Math.random() * todoList.length);
     const randomColor = todoList[randomIndex].barColor;
-    const id = Math.floor(Math.random() * 1000) + 1;
+    const id = (Math.floor(Math.random() * 1000) + 1).toString();
 
+    console.log({ id, projectName, barColor: randomColor, messageCount })
     setTodoList([
       ...todoList,
       { id, projectName, barColor: randomColor, messageCount },
     ]);
   };
-
   return (
     <Droppable droppableId="todo-list">
       {(provided) => (

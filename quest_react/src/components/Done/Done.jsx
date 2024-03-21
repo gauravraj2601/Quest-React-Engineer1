@@ -11,7 +11,7 @@ const Done = ({ doneList, setDoneList }) => {
   const addProject = (projectName, messageCount) => {
     const randomIndex = Math.floor(Math.random() * doneList.length);
     const randomColor = doneList[randomIndex].barColor;
-    const id = Math.floor(Math.random() * 1000) + 1;
+    const id = (Math.floor(Math.random() * 1000) + 1).toString();
 
     setDoneList([
       ...doneList,
