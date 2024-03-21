@@ -1,55 +1,49 @@
 import React, { useState } from 'react'
 import { PiDotsThreeBold } from "react-icons/pi";
 import { BsPlus } from "react-icons/bs";
-
 import styled from "styled-components"
 import AddCardModal from '../AddCardModal';
 import Cart from '../Cart';
-const Todo = () => {
+const Done = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [todoList, setTodoList] = useState([
+  const [doneList, setDoneList] = useState([
     {
-      projectName:"Project A",
-      barColor:"#7bc86c",
-      messageCount:""
-    },
-    {
-      projectName:"Project B",
-      barColor:"#e6c60d",
-      messageCount:"2"
-    },
-    {
-      projectName:"Project C",
-      barColor:"#cd8de5",
-      messageCount:"1"
-    },
-    {
-      projectName:"Project M",
-      barColor:"#ffaf3f",
-      messageCount:""
-    },
-    {
-      projectName:"Project K",
+      projectName:"Project D",
       barColor:"#29cce5",
-      messageCount:"2"
+      messageCount:"9"
     },
+    {
+      projectName:"Project N",
+      barColor:"#cd8de5",
+      messageCount:"4"
+    },
+    {
+      projectName:"Project X",
+      barColor:"#e6c60d",
+      messageCount:"24"
+    },
+    {
+      projectName:"Project R",
+      barColor:"#c0c6d0",
+      messageCount:"2"
+    }
   ])
   const addProject=(projectName, messageCount)=>{
-    const randomIndex = Math.floor(Math.random() * todoList.length);
-    const randomColor = todoList[randomIndex].barColor;
+    const randomIndex = Math.floor(Math.random() * doneList.length);
+    const randomColor = doneList[randomIndex].barColor;
 
-      setTodoList([...todoList, {projectName,barColor:randomColor, messageCount} ])
+      setDoneList([...doneList, {projectName,barColor:randomColor, messageCount} ])
   }
   return (
     <DIV>
-      <div id='todo-text'>
-        <h5>To Do</h5> 
+      <div id='done-text'>
+        <h5>Done</h5> 
         <PiDotsThreeBold size={20} />
       </div>
       <div>
-        {todoList?.map((el,i)=>(
+        {doneList?.map((el,i)=>(
 
-        <Cart index={`${i+1}todo`} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
+        <Cart index={`${i+1}done`} projectName={el.projectName} barColor={el.barColor} messageCount={el.messageCount} />
         ))}
       </div>
       <div id='add-cart-div'>
@@ -61,7 +55,7 @@ const Todo = () => {
   )
 }
 
-export default Todo
+export default Done
 
 const DIV= styled.div`
     width: 24.5%;
@@ -69,13 +63,14 @@ const DIV= styled.div`
     min-height: 100px; 
     border-radius: 10px;
     background-color: #f1f2f4;
-    #todo-text{
+    #done-text{
       width: 87%;
       margin: 15px 13px 13px 22px;
       height: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 13px;
     }
     #add-cart-div{
       width: 90%;

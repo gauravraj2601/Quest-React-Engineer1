@@ -1,7 +1,7 @@
 import './App.css';
-import Done from './components/Done';
+import Done from './components/Done/Done';
 import InProgress from './components/InProgress/InProgress';
-import Review from './components/Review';
+import Review from './components/Review/Review';
 import Todo from './components/Todo/Todo';
 
 function App() {

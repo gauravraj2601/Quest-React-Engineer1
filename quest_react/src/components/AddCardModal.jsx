@@ -24,14 +24,16 @@ const customStyles = {
 
 const AddCardModal = ({ modalIsOpen, setIsOpen, addProject }) => {
     const [projectName, setProjectName] = useState('');
+    const [messageCount, setMessageCount]= useState('');
 
   function closeModal() {
     setIsOpen(false);
   }
   function handleSubmit(e) {
     e.preventDefault();
-    addProject(projectName);
+    addProject(projectName, messageCount);
     setProjectName('');
+    setMessageCount('')
 
     closeModal();
   }
@@ -53,8 +55,10 @@ const AddCardModal = ({ modalIsOpen, setIsOpen, addProject }) => {
 
         <form onSubmit={handleSubmit}>
             <label> Project Name </label> <br />
-          <input type='text' onChange={(e)=>setProjectName(e.target.value)}/>
+          <input type='text' onChange={(e)=>setProjectName(e.target.value)} required/>
           <br />
+          <label>Message</label> <br />
+          <input type="number" onChange={(e)=>setMessageCount(e.target.value)}  />
           <br />
           <SubmitButton type='submit' >Add</SubmitButton>
           
@@ -90,6 +94,7 @@ const CloseButton = styled.button`
 `;
 const SubmitButton = styled.button`
   padding: 10px 20px;
+  margin-top: 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
