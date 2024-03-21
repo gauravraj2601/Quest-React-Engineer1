@@ -1,6 +1,6 @@
 ## Quest React Web Page Assignment
 This project is a submission for the Round 1 assignment for the React Engineer position. The objective was to construct a specific web page in React based on the provided image.
-- Deployed Link
+- Deployed Link- https://quest-react-ecru.vercel.app/
 ### Installation
 To run this project locally, follow these steps:
 Clone the repository:
@@ -45,7 +45,7 @@ This project utilizes the following npm modules:
   
 ### Submission Details
 - GitHub Repository Link: https://github.com/gauravraj2601/Quest-React-Engineer1/tree/master/quest_react
-- Deployed URL: Link to Deployed App
+- Deployed URL: [Link to Deployed App](https://quest-react-ecru.vercel.app/)
 
 ### Additional Notes
 This project aimed to replicate the design provided as closely as possible. The code is modular and well-organized, following best practices for React development. Proper Git commits were maintained throughout the development process.
